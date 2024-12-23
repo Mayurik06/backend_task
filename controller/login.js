@@ -18,7 +18,7 @@ export const login=async(req,res)=>{
             return res.status(401).json({message:"Invalid password", success:false}) ;
           }
 
-          return res.status(200).json({message:"Login successfull", success:true});
+          return res.status(200).json({message:"Login successfull", success:true,user});
     } catch (error) {
         return res.json(500).json({message:'internal server error', error:error.message})
     }

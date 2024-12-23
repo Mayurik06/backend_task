@@ -4,6 +4,7 @@ import cors from 'cors'
 import bodyParser from 'body-parser';
 import dbConnection from './connection/dbConnection.js';
 import userRoutes from './routes/userRoutes.js'
+import postRoutes from './routes/postRoutes.js'
 
 const app=express();
 
@@ -26,7 +27,7 @@ app.options('*',cors());
 
 //routes
 app.use('/api',userRoutes);
-
+app.use('/api',postRoutes);
 
 //dbconnection
 dbConnection();
